@@ -236,10 +236,217 @@ function Content() {
                 <p className='text-[18px] underline underline-offset-4 text-[#FFFFFF99]'>Joining as an organization? Contact Sales</p>
                 <a href="" className='inline-block mt-[41px] bg-[#4262FF] rounded-4xl px-[19px] py-[9px] text-white'>Sign up free →</a>
             </section>
-            <section>
-                
-            </section>
         </main>
+        <footer className='w-full bg-[#050038] py-[40px] px-[30px] mt-[120px] text-white'>
+            <div className='grid grid-cols-5'>
+                <div>
+                    <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
+                    <ul>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                    </ul>
+                    <a href="">View demo</a>
+                </div>
+                <div>
+                    <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
+                    <ul>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                    </ul>
+                    <a href="">View demo</a>
+                </div>
+                <div>
+                    <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
+                    <ul>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                    </ul>
+                    <a href="">View demo</a>
+                </div>
+                <div>
+                    <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
+                    <ul>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                    </ul>
+                    <a href="">View demo</a>
+                </div>
+                <div>
+                    <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
+                    <ul>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                        <li>
+                            <a href="">Online whiteboard</a>
+                        </li>
+                    </ul>
+                    <a href="">View demo</a>
+                </div>
+            </div>
+            <hr  className='mt-[100px] '/>
+            <div className='flex mt-[69px] justify-between items-center'>
+                <ul className='flex gap-[27px]'>
+                    <li>
+                        <img src="./src/assets/twitter.png" alt="" />
+                    </li>
+                    <li>
+                        <img src="./src/assets/facebook.png" alt="" />
+                    </li>
+                    <li>
+                        <img src="./src/assets/linkedin.png" alt="" />
+                    </li>
+                    <li>
+                        <img src="./src/assets/instagram.png" alt="" />
+                    </li>
+                    <li>
+                        <img src="./src/assets/youtube.png" alt="" />
+                    </li>
+                    <li className='block'>
+                        <img className='inline-block mr-[8px]' src="./src/assets/lan.png" alt="" />
+                        EN
+                    </li>
+                    <li>
+                        <a href="">© 2022 Miro</a>
+                    </li>
+                    <li>
+                        <a href="">Terms of Service</a>
+                    </li>
+                    <li>
+                        <a href="">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="">Manage Cookies</a>
+                    </li>
+                </ul>
+                <div className='flex gap-[12px]'>
+                    <img src="./src/assets/appstore.png" alt="" />
+                    <img src="./src/assets/googleplay.png" alt="" />
+                    <img src="./src/assets/logo.png" alt="" />
+                </div>
+            </div>
+        </footer>
     </>
   )
 }
