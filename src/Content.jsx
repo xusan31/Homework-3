@@ -236,6 +236,9 @@ function Content() {
                 <p className='text-[18px] underline underline-offset-4 text-[#FFFFFF99]'>Joining as an organization? Contact Sales</p>
                 <a href="" className='inline-block mt-[41px] bg-[#4262FF] rounded-4xl px-[19px] py-[9px] text-white'>Sign up free →</a>
             </section>
+            <section>
+                
+            </section>
         </main>
     </>
   )
