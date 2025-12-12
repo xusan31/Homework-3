@@ -1,6 +1,62 @@
 import React from 'react'
+import Codes from './Codes'
+import { Arr, Links, Teams, Work } from './array'
 
 function Content() {
+    function product(){
+            const result = [];
+    
+            for(let i = 0; i < 9; i++){
+                result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
+            if(i == 8){
+                result.push(
+                    <li key={i} className='underline underline-offset-4 mt-[20px]'><a href="">{Links[i + 1]}</a></li>
+                )
+                }
+            }
+            return result
+        }
+
+    function solutions(){
+            const result = [];
+    
+            for(let i = 10; i < 21; i++){
+                result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
+            }
+            return result
+        }
+
+    function resources(){
+            const result = [];
+    
+            for(let i = 21; i < 29; i++){
+                result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
+            }
+            return result
+        }
+
+    function company(){
+            const result = [];
+    
+            for(let i = 29; i < 33; i++){
+                result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
+            }
+            return result
+        }
+
+    function plans(){
+            const result = [];
+    
+            for(let i = 33; i < 40; i++){
+                result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
+                if(i == 39){
+                    result.push(<li key={i} className='underline underline-offset-4 mt-[20px]'><a href="">{Links[i + 1]}</a></li>)
+                }
+            }
+            return result
+        }
+
+
   return (
     <>
         <header className='flex justify-between items-center px-[30px] pt-[25px] pb-[34px] shadow-sm'>
@@ -68,18 +124,14 @@ function Content() {
                     <h1 className='text-[48px] font-bold text-center leading-15'>Collaborate without constraints</h1>
                 </div>
                 <div className='flex mt-[13px] gap-[21px]'>
-                    <div className='px-[23px] pt-[23px] pb-[43px]'>
-                        <h2 className='font-bold text-[24px]'>Free forever</h2>
-                        <p className='max-w-[313px] text-[18px] text-[#05003899] mt-[29px]'>Our free plan gives you unlimited team members, 3 boards, and 300+ expert-made templates. Signing up with your work email lets you bring in your team faster. See our <br /> pricing plans for more features.</p>
-                    </div>
-                    <div className='pl-[23px] pr-[34px] pt-[23px] pb-[43px]'>
-                        <h2 className='font-bold text-[24px]'>Easy integrations</h2>
-                        <p className='max-w-[313px] text-[18px] text-[#05003899] mt-[29px]'>Miro has 100+ powerful integrations with tools you already use like G<br />Suite, Slack, and Jira, so your workflow is seamless. View the full<br /> list in our <span className='text-[#4262FF]'>Marketplace</span> .</p>
-                    </div>
-                    <div className='px-[23px] pt-[23px] pb-[43px]'>
-                        <h2 className='font-bold text-[24px]'>Security first</h2>
-                        <p className='max-w-[313px] text-[18px] text-[#05003899] mt-[29px]'>We treat your data like you would — with the utmost care. We follow industry-leading security standards and give you tools to protect intellectual property. Learn more at our <span className='text-[#4262FF]'>Trust Center</span> .</p>
-                    </div>
+                    {Arr.map((item) => {
+                        return (
+                            <div key={item.name} className='px-[23px] pt-[23px] pb-[43px]'>
+                                <h2 className='font-bold text-[24px]'>{item.name}</h2>
+                                <p className='max-w-[313px] text-[18px] text-[#05003899] mt-[29px]'>{item.discription}</p>
+                            </div>
+                        )
+                    })}
                 </div>
                 <button className='bg-[#4262FF] rounded-4xl px-[30px] py-[9px] text-white'>Sign up free →</button>
             </section>
@@ -105,13 +157,23 @@ function Content() {
             <section className='max-w-[1120px] m-auto mt-[90px] px-[39px]'>
                 <h1 className='text-[48px] font-bold text-[#050038]'>Built for the way you work</h1>
                 <ul className='flex justify-between mt-[33px]'>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>Brainstorming</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Diagramming</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Meetings & Workshops</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Scrum Events</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Mapping</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Research & Design</li>
-                    <li className='border border-r-0 border-[#F2F2F2] rounded-4xl rounded-br-none rounded-tr-none py-[13px] pl-[19px] pr-[15px] text-[14px] text-[#050038]'>Strategic Planning</li>
+
+                    {Work.map((workName, index) => {
+                        if(index == 0){
+                            return (
+                                <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>{workName}</li>
+                            )
+                        } else if(index == 6){
+                            return (
+                                <li key={index} className='border border-r-0 border-[#F2F2F2] rounded-4xl rounded-br-none rounded-tr-none py-[13px] pl-[19px] pr-[15px] text-[14px] text-[#050038]'>{workName}</li>
+                            )
+                        }
+                        return (
+                            <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>{workName}</li>           
+                        )
+                       
+                    })}
+
                 </ul>
                 <div className='flex mt-[26px] justify-between'>
                     <div>
@@ -125,13 +187,20 @@ function Content() {
             <section className='max-w-[1120px] m-auto mt-[150px] px-[39px]'>
                 <h1 className='text-[48px] font-bold text-[#050038]'>Built for all kinds of teams</h1>
                 <ul className='flex gap-[9px] mt-[33px]'>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>UX & Design</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Marketing</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Product Management</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Engineering</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Consultants</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>Agile Coaches</li>
-                    <li className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[17px] pr-[23px] text-[14px] text-[#050038]'>Sales</li>
+
+                    {Teams.map((teamName, index) => {
+                        if(index == 0){
+                            return (
+                                <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>{teamName}</li>
+                            )
+                        } 
+
+                        return (
+                            <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>{teamName}</li>
+                        )
+                       
+                    })}
+
                 </ul>
                 <div className='flex mt-[26px] justify-between'>
                     <div>
@@ -242,167 +311,40 @@ function Content() {
                 <div>
                     <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
                     <ul>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
+                        
+                        {product()}
+
                     </ul>
-                    <a href="">View demo</a>
                 </div>
                 <div>
                     <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
                     <ul>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
+                        
+                        {solutions()}
+
                     </ul>
-                    <a href="">View demo</a>
                 </div>
                 <div>
                     <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
                     <ul>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
+                        
+                        {resources()}
+
                     </ul>
-                    <a href="">View demo</a>
                 </div>
                 <div>
                     <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
                     <ul>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
+                        {company()}
                     </ul>
-                    <a href="">View demo</a>
                 </div>
                 <div>
                     <h1 className='text-[18px] font-bold mb-[24px]'>Product</h1>
                     <ul>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
-                        <li>
-                            <a href="">Online whiteboard</a>
-                        </li>
+                       
+                        {plans()}
+
                     </ul>
-                    <a href="">View demo</a>
                 </div>
             </div>
             <hr  className='mt-[100px] '/>
