@@ -59,7 +59,7 @@ export let Links = [
     "Miro Events",
     "About us",
     "Careers 🚀",
-    "MiroveMiro in the Newsrse",
+    "MiroveMiro in the Newsx",
     "Customer Stories",
     "Pricing",
     "Business",
@@ -70,6 +70,9 @@ export let Links = [
     "NPOs",
     "Contact sales →",
 ]
+
+
+
 
 
 

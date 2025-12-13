@@ -1,8 +1,24 @@
 import React from 'react'
-import Codes from './Codes'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
 import { Arr, Links, Teams, Work } from './array'
+import Aos from 'aos';
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
 function Content() {
+    
+
+    useEffect(() => {
+            AOS.init({
+            duration: 2000, // animatsiya vaqti (ms)
+        });
+        AOS.refresh()
+
+        }, []);
+
+
     function product(){
             const result = [];
     
@@ -10,7 +26,7 @@ function Content() {
                 result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
             if(i == 8){
                 result.push(
-                    <li key={i} className='underline underline-offset-4 mt-[20px]'><a href="">{Links[i + 1]}</a></li>
+                    <li key={i + 1} className='underline underline-offset-4 mt-[20px]'><a href="">{Links[i + 1]}</a></li>
                 )
                 }
             }
@@ -50,13 +66,83 @@ function Content() {
             for(let i = 33; i < 40; i++){
                 result.push(<li key={i} className='leading-8'><a href="">{Links[i]}</a></li>)
                 if(i == 39){
-                    result.push(<li key={i} className='underline underline-offset-4 mt-[20px]'><a href="">{Links[i + 1]}</a></li>)
+                    result.push(<li key={i + 1} className='underline underline-offset-4 mt-[20px]'><a href="">{Links[i + 1]}</a></li>)
                 }
             }
             return result
         }
 
 
+        // click
+
+        function clicked(e) {
+            let remove = document.querySelectorAll('#removeStyle')
+            remove.forEach(item => item.classList.remove("bg-[#F1F3FD]"))
+            
+            e.target.classList.add("bg-[#F1F3FD]");
+
+            let swichT = document.querySelector('#swichedText')
+            let swichP = document.querySelector('#swichedParagraph')
+            let swichImg = document.querySelector('#switchedImg')            
+            let swichA = document.querySelector('#swichedAnimation')   
+            
+            
+            
+            swichT.innerHTML= e.target.innerHTML            
+
+            if(e.target.innerHTML == 'Brainstorming'){
+                swichP.innerHTML = 'Unleash creative ideas and build on them with the help of sticky notes, images, mind maps, videos, drawing capabilities — the list goes on.'
+                swichImg.src= './src/assets/Brainstormwithoutshadow.jpg.png'
+            } else if(e.target.innerHTML == 'Diagramming'){
+                swichP.innerHTML = 'Diagramming is the visual representation of information, concepts, or processes using symbolic images like shapes, lines, and text to show relationships and structure'
+                swichImg.src= 'https://st.depositphotos.com/1014014/1929/i/950/depositphotos_19295443-stock-photo-pie-chart-and-business-chart.jpg'
+            } else if(e.target.innerHTML == "Meetings &amp; Workshops"){                
+                swichP.innerHTML = 'Meetings are for discussion and updates (shallow, many topics), while workshops are hands-on, facilitated sessions for deep, collaborative work, producing tangible outcomes like plans or prototypes.'
+                swichImg.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxAQU_0lVy5fe4IWZJpGa0IDU4S83Gpenww&s'
+            } else if(e.target.innerHTML == 'Scrum Events'){
+                swichP.innerHTML = 'Scrum has five core events providing structure within a Sprint: the Sprint (container), Sprint Planning (what/how), Daily Scrum (daily sync), Sprint Review (inspect work/adapt product), and Sprint Retrospective (inspect/adapt process).'
+                swichImg.src= 'https://agilemania.com/uploads/posts/16828471961.png'
+            } else if(e.target.innerHTML == 'Mapping'){
+                swichP.innerHTML = 'Mapping is the process of creating representations or assigning connections between elements, from drawing geographical maps (cartography)'
+                swichImg.src= 'https://www.osano.com/hubfs/data-mapping-osano.webp'
+            } else if(e.target.innerHTML == 'Research &amp; Design'){
+                swichP.innerHTML = 'Research & Design is about creating a structured framework (Research Design) to guide a study, ensuring valid answers to questions, or applying hands-on design work (Research through Design)'
+                swichImg.src= 'https://www.ilovephd.com/wp-content/uploads/2024/04/What-is-Research-Design.jpg'
+            }   else if(e.target.innerHTML == 'Strategic Planning'){
+                swichP.innerHTML = 'Strategic planning is the process where organizations define their future vision, set long-term goals, and create actionable plans with priorities and resource allocation to achieve them'
+                swichImg.src= 'https://www.esade.edu/wp-content/uploads/2025/06/mano-mueve-una-pieza-de-ajedrez-estrategicamente.jpg'
+            }
+            
+        }
+
+
+        function clickedTwo(e){
+            let removeTwo = document.querySelectorAll('#removeStyleTwo')
+            let swichImgTwo = document.querySelector('#swichImgTwo')
+
+            removeTwo.forEach(item => item.classList.remove("bg-[#F1F3FD]"))
+            e.target.classList.add("bg-[#F1F3FD]");
+
+            if(e.target.innerHTML == 'UX &amp; Design'){
+                swichImgTwo.src= './src/assets/div2.png'
+            } else if(e.target.innerHTML == 'Product Management'){
+                swichImgTwo.src= 'https://www.prodpad.com/wp-content/uploads/2024/10/Product-Management-Life-Cycle.png'
+            }
+            if(e.target.innerHTML == 'Engineering'){
+                swichImgTwo.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqobKZ6IgkY_Q6-q7OIvM4Cw7O6xOAC8kNuA&s'
+            }
+            if(e.target.innerHTML == 'Consultants'){
+                swichImgTwo.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1sfAKWdAJTuA5ZIN3DHLWsydVfF3WToPDg&s'
+            }
+            if(e.target.innerHTML == 'Agile Coaches'){
+                swichImgTwo.src= 'https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/Agile-focus-area2-01.png'
+            }
+            if(e.target.innerHTML == 'Sales'){
+                swichImgTwo.src= 'https://oneflow.com/app/uploads/2024/02/240201_Sales_Process_Blog-_visual-1-1440x810.png'
+            }
+        }
+
+        
   return (
     <>
         <header className='flex justify-between items-center px-[30px] pt-[25px] pb-[34px] shadow-sm'>
@@ -161,27 +247,27 @@ function Content() {
                     {Work.map((workName, index) => {
                         if(index == 0){
                             return (
-                                <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>{workName}</li>
+                                <li key={index} id='removeStyle' onClick={clicked} className='cursor-pointer border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>{workName}</li>
                             )
                         } else if(index == 6){
                             return (
-                                <li key={index} className='border border-r-0 border-[#F2F2F2] rounded-4xl rounded-br-none rounded-tr-none py-[13px] pl-[19px] pr-[15px] text-[14px] text-[#050038]'>{workName}</li>
+                                <li key={index} id='removeStyle' onClick={clicked} className='cursor-pointer border border-r-0 border-[#F2F2F2] rounded-4xl rounded-br-none rounded-tr-none py-[13px] pl-[19px] pr-[15px] text-[14px] text-[#050038]'>{workName}</li>
                             )
                         }
                         return (
-                            <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>{workName}</li>           
+                            <li key={index} id='removeStyle' onClick={clicked} className='cursor-pointer border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>{workName}</li>           
                         )
                        
                     })}
 
                 </ul>
-                <div className='flex mt-[26px] justify-between'>
+                <div className='flex mt-[26px] justify-between' data-aos="fade-left">
                     <div>
-                        <h3 className='text-[18px] mt-[31px] text-[#050038]'>Brainstorming</h3>
-                        <p className='max-w-[302px] text-[18px] text-[#050038B2] mt-[26px]'>Unleash creative ideas and build on them with the help of sticky notes, images, mind maps, videos, drawing capabilities — the list goes on.</p>
+                        <h3 className='text-[18px] mt-[31px] text-[#050038]' id='swichedText'>Brainstorming</h3>
+                        <p className='max-w-[302px] text-[18px] text-[#050038B2] mt-[26px]' id='swichedParagraph'>Unleash creative ideas and build on them with the help of sticky notes, images, mind maps, videos, drawing capabilities — the list goes on.</p>
                         <a href="" className='inline-block text-[#4262FF] text-[18px] mt-[37px] font-semibold'>Learn more →</a>
                     </div>
-                    <img src="./src/assets/Brainstormwithoutshadow.jpg.png" alt="" />
+                    <img id='switchedImg' className='max-w-[600px] h-[450px] rounded-2xl' src="./src/assets/Brainstormwithoutshadow.jpg.png" alt="" />
                 </div>
             </section>
             <section className='max-w-[1120px] m-auto mt-[150px] px-[39px]'>
@@ -191,12 +277,12 @@ function Content() {
                     {Teams.map((teamName, index) => {
                         if(index == 0){
                             return (
-                                <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>{teamName}</li>
+                                <li key={index} id='removeStyleTwo' onClick={clickedTwo} className='cursor-pointer border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] bg-[#F1F3FD] text-[14px] text-[#050038]'>{teamName}</li>
                             )
                         } 
 
                         return (
-                            <li key={index} className='border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>{teamName}</li>
+                            <li key={index} id='removeStyleTwo' onClick={clickedTwo} className='cursor-pointer border border-[#F2F2F2] rounded-4xl py-[13px] pl-[19px] pr-[27px] text-[14px] text-[#050038]'>{teamName}</li>
                         )
                        
                     })}
@@ -227,7 +313,7 @@ function Content() {
                             <img src="./src/assets/Vector (2).png" alt="" />
                         </div>
                     </div>
-                    <img src="./src/assets/div2.png" alt="" />
+                    <img className='max-w-[700px] h-[450px] rounded-2xl' id='swichImgTwo' src="./src/assets/div2.png" alt="" />
                 </div>
             </section>
             <section className='w-full bg-[#FFD02F] mt-[150px] text-center py-[120px]'>
